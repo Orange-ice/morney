@@ -24,6 +24,6 @@
     .content {
         overflow: auto;
         flex-grow: 1;
-        border: solid 1px blue;
+        background-color: pink;
     }
 </style>
