@@ -15,7 +15,6 @@
 
 <style lang="scss" scoped>
     .nav-wrapper {
-        border: solid 1px green;
         display: flex;
         flex-direction: column;
         height: 100vh;
@@ -24,6 +23,5 @@
     .content {
         overflow: auto;
         flex-grow: 1;
-        background-color: pink;
     }
 </style>
