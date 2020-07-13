@@ -62,6 +62,7 @@
         }
 
         ok() {
+            this.$emit('update:value',this.output)
         }
     }
 </script>
