@@ -15,25 +15,25 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue'
+    import Vue from 'vue';
     import {Component} from 'vue-property-decorator';
     import tagListModel from '@/models/tagListModel';
     import Button from '@/components/Button.vue';
 
-    tagListModel.fetch();
     @Component({
         components: {Button}
     })
-    export default class Labels extends Vue{
-        tags = tagListModel.data;
-        createTag(){
+    export default class Labels extends Vue {
+        tags = window.tagList;
+
+        createTag() {
             const name = window.prompt('请输入标签名');
-            if(name){
+            if (name) {
                 const message = tagListModel.create(name);
-                if(message === 'duplicated'){
-                    window.alert('标签名重复了')
-                } else if(message === 'success'){
-                    window.alert('添加成功')
+                if (message === 'duplicated') {
+                    window.alert('标签名重复了');
+                } else if (message === 'success') {
+                    window.alert('添加成功');
                 }
             }
         }
@@ -69,7 +69,8 @@
         border-radius: 4px;
         height: 40px;
         padding: 0 16px;
-        &-wrapper{
+
+        &-wrapper {
             text-align: center;
             margin-top: 28px;
             padding: 16px;
