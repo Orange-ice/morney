@@ -1,6 +1,6 @@
 import createId from '@/lib/createId';
 
-const localStorageKeyName = 'recordList';
+const localStorageKeyName = 'tagList';
 const tagStore = {
     tagList: [] as Tag[],
     fetchTags() {
