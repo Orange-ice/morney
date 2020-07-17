@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <Tabs :data-source="recordTypeList" class-prefix="type" :value.sync="type"/>
-<!--        <Tabs :data-source="intervalList" class-prefix="interval" :value.sync="interval"/>-->
+        <!--        <Tabs :data-source="intervalList" class-prefix="interval" :value.sync="interval"/>-->
 
         <ol>
             <li v-for="(group,index) in groupedList" :key="index">
@@ -19,30 +19,6 @@
     </Layout>
 </template>
 
-<style scoped lang="scss">
-    %item {
-        padding: 8px 16px;
-        line-height: 24px;
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-    }
-
-    .title {
-        @extend %item
-    }
-
-    .record {
-        @extend %item
-    }
-
-    .notes {
-        margin-right: auto;
-        margin-left: 16px;
-        color: #999;
-        font-size: small;
-    }
-</style>
 
 <script lang="ts">
     import Vue from 'vue';
@@ -65,8 +41,8 @@
             const {recordList} = this;
             if (recordList.length === 0) {return [];}
 
-            const newList = clone(recordList).filter(r=>r.type ===this.type).sort((a, b) => dayjs(b.createdAt).valueOf() - dayjs(a.createdAt).valueOf());
-            type Result = {title: string;total?: number;items: RecordItem[]}[]
+            const newList = clone(recordList).filter(r => r.type === this.type).sort((a, b) => dayjs(b.createdAt).valueOf() - dayjs(a.createdAt).valueOf());
+            type Result = { title: string; total?: number; items: RecordItem[] }[]
             const result: Result = [{title: dayjs(newList[0].createdAt).format('YYYY-MM-DD'), items: [newList[0]]}];
             for (let i = 1; i < newList.length; i++) {
                 const current = newList[i];
@@ -77,9 +53,9 @@
                     result.push({title: dayjs(current.createdAt).format('YYYY-MM-DD'), items: [current]});
                 }
             }
-            result.map(group =>{
-                group.total = group.items.reduce((sum,item)=>sum+item.amount,0)
-            })
+            result.map(group => {
+                group.total = group.items.reduce((sum, item) => sum + item.amount, 0);
+            });
             return result;
         }
 
@@ -113,8 +89,30 @@
         recordTypeList = recordTypeList;
     }
 </script>
+<style scoped lang="scss">
+    %item {
+        padding: 8px 16px;
+        line-height: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+    }
 
-<style lang="scss" scoped>
+    .title {
+        @extend %item
+    }
+
+    .record {
+        @extend %item
+    }
+
+    .notes {
+        margin-right: auto;
+        margin-left: 16px;
+        color: #999;
+        font-size: small;
+    }
+
     ::v-deep {
         .type-tabs-item {
             background: #c4c4c4;
