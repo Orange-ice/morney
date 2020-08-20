@@ -100,7 +100,12 @@
               type: 'category',
               data: keys,
               axisTick:{alignWithLabel:true},   // 点和坐标数字对齐
-              axisLine:{lineStyle:{color:'#666'}}
+              axisLine:{lineStyle:{color:'#666'}},
+              axisLabel:{
+                formatter: function (value: string,index: number){
+                  return value.substr(5)
+                }
+              }
             },
             yAxis: {
               type: 'value',
