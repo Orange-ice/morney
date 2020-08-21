@@ -11,6 +11,7 @@
                 field-name="备注" placeholder="在这里输入备注"/>
     </div>
     <Tags @update:value="record.tags=$event"/>
+    <div class="title">钱多多记账</div>
   </Layout>
 </template>
 
@@ -66,6 +67,14 @@ export default class Money extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.title{
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #EF849D;
+  color: #F9F7D9;
+}
 ::v-deep .layout-content {
   display: flex;
   flex-direction: column-reverse;

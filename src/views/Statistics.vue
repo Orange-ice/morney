@@ -178,7 +178,8 @@ export default class Statistics extends Vue {
 }
 
 .title {
-  @extend %item
+  @extend %item;
+  background: #EFBBCF;
 }
 
 .record {
@@ -194,10 +195,12 @@ export default class Statistics extends Vue {
 
 ::v-deep {
   .type-tabs-item {
-    background: #c4c4c4;
+    background: #fff;
+    height: 48px;
+    font-size: 22px;
 
     &.selected {
-      background: white;
+      background: #FB7299;
 
       &::after {
         display: none;
@@ -212,6 +215,7 @@ export default class Statistics extends Vue {
 }
 
 .chart {
+  height: 38vh;
   width: 430%;
   &-wrapper {
     overflow: auto;

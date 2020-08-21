@@ -13,6 +13,6 @@
         font-family: $font-hei;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background: #f5f5f5;
+        background: #FCF5F7;
     }
 </style>

@@ -60,7 +60,8 @@
         text-align: center;
         font-size: 16px;
         padding: 12px 16px;
-        background: white;
+        background: #FB7299;
+      color: white;
         display: flex;
         align-items: center;
         justify-content: space-between;

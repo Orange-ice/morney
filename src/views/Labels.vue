@@ -1,6 +1,9 @@
 <template>
     <div>
         <Layout>
+          <div class="title">
+            标签列表
+          </div>
             <div class="tags">
                 <router-link class="tag" :to="`/labels/edit/${tag.id}`" v-for="tag in tags" :key="tag.id">
                     <span>{{tag.name}}</span>
@@ -35,6 +38,15 @@
 </script>
 
 <style lang="scss" scoped>
+.title{
+  height: 48px;
+  background: #FB7299;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
     .tags {
         background: white;
         font-size: 16px;
@@ -57,7 +69,7 @@
     }
 
     .createTag {
-        background: #767676;
+        background: #EFBBCF;
         color: white;
         border: none;
         border-radius: 4px;
